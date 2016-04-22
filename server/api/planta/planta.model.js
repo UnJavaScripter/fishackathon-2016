@@ -3,9 +3,22 @@
 import mongoose from 'mongoose';
 
 var PlantaSchema = new mongoose.Schema({
-  name: String,
-  info: String,
-  active: Boolean
+  genus: String,
+  epithet: String,
+  family: String,
+  colloquial_names: [String],
+  pictures: [
+    {
+      label: String,
+      url: String
+    }
+  ],
+  location: [
+    {
+      lat: Number,
+      lng: Number
+    }
+  ]
 });
 
 export default mongoose.model('Planta', PlantaSchema);
