@@ -1,0 +1,78 @@
+plantas
+  display flex
+  flex-direction row-reverse
+  @media screen and (max-width: 600px)
+    flex-direction column-reverse
+
+section.plant-container
+  &>.aPlant
+    width auto
+    padding 0.8em
+    margin 1em
+    box-shadow 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12)
+    background #f7f7f7
+    &>.plant-data
+      padding-bottom 2em
+      margin-bottom 1.5em
+      border-bottom 2px dashed #efefef
+      &>h2
+        font-weight bolder
+        &>span.genus
+          text-transform capitalize
+    &>.plant-pics-container
+      display flex
+      &>.plant-pic
+        flex 1 0 50%
+        margin 0.1em
+        &>span
+          position relative
+          bottom -22px
+          padding-left 0.5em
+          color white
+        &>img
+          max-width 100%
+  & h3
+    margin-bottom 1.3em
+    font-weight 600
+    color #666
+
+
+section.add-plant
+  box-shadow 0 1px 5px 0 rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.12)
+  margin 0.5em
+  padding-top 0
+  padding-right 1em
+  padding-bottom 1em
+  padding-left 1em
+  &>form
+    &>div.form-element
+      display flex
+      margin-bottom 0.5em
+      justify-content space-between
+      @media screen and (max-width: 600px)
+        justify-content initial
+      &>label
+          align-items center
+          display flex
+        @media screen and (max-width: 600px)
+          flex 0 0 30%
+      &>input
+        border none
+        border-bottom 1px solid rgba(0,0,0,0.12)
+        padding 0.5em
+        font-size 1.3em
+        @media screen and (max-width: 600px)
+          flex 1 0 auto
+        &:focus
+          border-bottom 1px solid COLOR_MAIN
+
+    &>input[type="submit"]
+      background COLOR_MAIN
+      color #fafafa
+      border none
+      padding 0.5em
+      width 100%
+      font-size 1.5em
+      &:hover
+        background COLOR_MAIN - #111
+        color #fff
