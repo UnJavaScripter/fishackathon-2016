@@ -1,0 +1,20 @@
+<section class="plant-container">
+  <div class="aPlant" ng-repeat="planta in $ctrl.plantas">
+    <div class="plant-data">
+      <h2>
+        <span class="genus">{{planta.genus}}</span>
+        <span class="epithet">{{planta.epithet}}</span>
+      </h2>
+      <h4>Familia {{planta.family | uppercase}}</h4>
+      Conocida como: 
+      <span ng-repeat="vernacular in planta.colloquial_names">{{vernacular}}</span>
+    </div>
+    <div class="plant-pics-container">
+      <div class="plant-pic" ng-repeat="picture in planta.pictures">
+        <span>{{picture.label}}</span>
+        <img ng-src="{{picture.url}}" alt="{{picture.label}}" title="{{picture.label}}">
+      </div>
+    </div>
+  </div>
+</section>
+
