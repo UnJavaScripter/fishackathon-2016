@@ -18,3 +18,33 @@
   </div>
 </section>
 
+<section class="add-plant">
+  <form name="newPlanta" ng-submit="$ctrl.addPlanta()">
+    <h3>Agregar una nueva planta</h3>
+
+    <div class="form-element">
+      <input type="text" ng-model="$ctrl.newPlanta.genus" placeholder="Género" required>
+    </div>
+    <div class="form-element">
+      <input type="text" ng-model="$ctrl.newPlanta.epithet" placeholder="Epíteto" required>
+    </div>
+    <div class="form-element">
+      <input type="text" ng-model="$ctrl.newPlanta.family" placeholder="Familia" required>
+    </div>
+    <div class="form-element">
+      <input type="text" ng-model="$ctrl.newPlanta.colloquial_names[0]" placeholder="Nombre común" required>
+    </div>
+    
+    <h3>Foto</h3>
+
+    <div class="form-element">
+      <input type="text" ng-model="$ctrl.newPlanta.pictures[0].url" placeholder="Url" required>
+    </div>
+    <div class="form-element">
+      <input type="text" ng-model="$ctrl.newPlanta.pictures[0].label" placeholder="Etiqueta" required>
+    </div>
+
+    <input type="submit" value="Agregar">
+  </form>
+  
+</section>
