@@ -9,7 +9,17 @@
       Conocida como: 
       <span ng-repeat="vernacular in planta.colloquial_names">{{vernacular}}</span>
     </div>
-    <div class="plant-pics-container">
+
+    <div class="plant-map" ng-if="planta.location.length">
+      <ui-gmap-google-map center="{latitude: 4, longitude: -74}" zoom="6">
+        <ui-gmap-markers
+                models='planta.location'
+                coords="'self'"
+        >
+        </ui-gmap-markers>
+      </ui-gmap-google-map>
+    </div>
+    <div class="plant-pics-container" ng-if="planta.pictures">
       <div class="plant-pic" ng-repeat="picture in planta.pictures">
         <span>{{picture.label}}</span>
         <img ng-src="{{picture.url}}" alt="{{picture.label}}" title="{{picture.label}}">
@@ -38,10 +48,10 @@
     <h3>Foto</h3>
 
     <div class="form-element">
-      <input type="text" ng-model="$ctrl.newPlanta.pictures[0].url" placeholder="Url" required>
+      <input type="text" ng-model="$ctrl.newPlanta.pictures[0].url" placeholder="Url">
     </div>
     <div class="form-element">
-      <input type="text" ng-model="$ctrl.newPlanta.pictures[0].label" placeholder="Etiqueta" required>
+      <input type="text" ng-model="$ctrl.newPlanta.pictures[0].label" placeholder="Etiqueta">
     </div>
 
     <input type="submit" value="Agregar">
